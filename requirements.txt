@@ -1,0 +1,19 @@
+--extra-index-url https://download.pytorch.org/whl/cu130
+torch
+torchvision
+numpy
+pandas
+matplotlib
+scipy
+seaborn
+ipykernel
+tqdm
+ipywidgets
+scikit-learn
+transformers
+peft
+bitsandbytes
+accelerate
+optuna
+datasets
+pyarrow

@@ -1,0 +1,54 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# ---------- Environments ----------
+.venv/
+venv/
+env/
+.conda/
+.env
+.env.*
+
+# ---------- Jupyter ----------
+.ipynb_checkpoints/
+
+# ---------- Data (download with the code instead of committing) ----------
+data/
+datasets/
+hf_cache/
+*.parquet
+*.tar.gz
+*.zip
+
+# ---------- Model weights and checkpoints (too large for git) ----------
+checkpoints/
+outputs/
+models/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+
+# ---------- Training logs and tuning ----------
+runs/
+logs/
+lightning_logs/
+wandb/
+mlruns/
+*.log
+optuna*.db
+
+# ---------- Editors ----------
+.vscode/
+.idea/
+
+# ---------- OS files ----------
+.DS_Store
+Thumbs.db
+desktop.ini
