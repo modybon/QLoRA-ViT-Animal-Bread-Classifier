@@ -17,3 +17,5 @@ accelerate
 optuna
 datasets
 pyarrow
+nbconvert
+plotly
