@@ -13,7 +13,7 @@ from datasets import load_dataset
 import matplotlib.pyplot as plt
 from torch.utils.data import Subset, DataLoader
 from sklearn.model_selection import train_test_split
-
+import re
 
 # In[63]:
 
@@ -55,16 +55,21 @@ class PetDataset(Dataset):
     def __len__(self):
         return len(self.data)
 
+    @staticmethod
+    def clean_name(image_id):
+        name = re.sub(r"_\d+$", "", image_id)
+        return name.replace("_", " ").title()
+
     def __getitem__(self, i):
         image = self.data[i]
         transformed_image = self.transform(image['image'].convert("RGB"))
-        return transformed_image, image['label'], image['image_id'], image['label_cat_dog']
+        return transformed_image, image['label'], self.clean_name(image['image_id']), image['label_cat_dog']
 
 
 # In[ ]:
 
 
-def get_data(batch_size=64,random_state=RANDOM_STATE):
+def get_data(batch_size=64,train_transformation=train_tf,eval_transformation=eval_tf,random_state=RANDOM_STATE):
     hf = load_dataset("timm/oxford-iiit-pet", cache_dir=ROOT)
     train_data = hf['train']
     test_data = hf['test']
@@ -73,8 +78,8 @@ def get_data(batch_size=64,random_state=RANDOM_STATE):
 
     train_indices, val_indices = train_test_split(range(len(labels)),test_size=735, stratify=labels, random_state=random_state)
 
-    train_ds = PetDataset(df=train_data.select(train_indices), transform=train_tf)
-    val_ds = PetDataset(df=train_data.select(val_indices), transform=eval_tf)
+    train_ds = PetDataset(df=train_data.select(train_indices), transform=train_transformation)
+    val_ds = PetDataset(df=train_data.select(val_indices), transform=eval_transformation)
     test_ds = PetDataset(df=test_data, transform=eval_tf)
 
     train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True, num_workers=0)

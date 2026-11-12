@@ -19,3 +19,4 @@ datasets
 pyarrow
 nbconvert
 plotly
+bokeh
