@@ -6,12 +6,14 @@
     "base_model_class": "ViTForImageClassification",
     "parent_library": "transformers.models.vit.modeling_vit"
   },
-  "base_model_name_or_path": "google/vit-base-patch16-224-in21k",
+  "base_model_name_or_path": "facebook/deit-base-patch16-224",
   "bias": "none",
   "corda_config": null,
   "ensure_weight_tying": false,
   "eva_config": null,
-  "exclude_modules": null,
+  "exclude_modules": [
+    "classifier"
+  ],
   "fan_in_fan_out": false,
   "inference_mode": true,
   "init_lora_weights": true,
@@ -37,13 +39,13 @@
   "rank_pattern": {},
   "revision": null,
   "target_modules": [
-    "v_proj",
-    "k_proj",
-    "q_proj",
     "o_proj",
+    "fc2",
+    "v_proj",
     "classifier",
-    "fc1",
-    "fc2"
+    "q_proj",
+    "k_proj",
+    "fc1"
   ],
   "target_parameters": null,
   "task_type": null,

@@ -1,0 +1,12 @@
+{
+  "test_acc": 0.9367675115835378,
+  "test_top5_acc": 0.9961842463886618,
+  "infer_images_per_s": 184.84891160842614,
+  "infer_peak_mem_gb": 0.34784,
+  "seed": 42,
+  "model_name": "facebook/deit-small-patch16-224",
+  "mode": "qlora",
+  "tuned_lr": 0.0015012295541316607,
+  "weight_decay": 0.05,
+  "checkpoint_mb": 5.393374
+}

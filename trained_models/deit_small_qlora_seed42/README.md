@@ -1,8 +1,8 @@
 ---
-base_model: google/vit-base-patch16-224-in21k
+base_model: facebook/deit-small-patch16-224
 library_name: peft
 tags:
-- base_model:adapter:google/vit-base-patch16-224-in21k
+- base_model:adapter:facebook/deit-small-patch16-224
 - lora
 - transformers
 ---

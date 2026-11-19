@@ -1,0 +1,12 @@
+{
+  "test_acc": 0.9367675115835378,
+  "test_top5_acc": 0.9961842463886618,
+  "infer_images_per_s": 184.478233710327,
+  "infer_peak_mem_gb": 0.900176384,
+  "seed": 42,
+  "model_name": "facebook/deit-base-patch16-224",
+  "mode": "full",
+  "tuned_lr": 0.00017524101118128148,
+  "weight_decay": 0.05,
+  "checkpoint_mb": 343.337125
+}
