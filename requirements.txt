@@ -20,3 +20,4 @@ pyarrow
 nbconvert
 plotly
 bokeh
+gradio
